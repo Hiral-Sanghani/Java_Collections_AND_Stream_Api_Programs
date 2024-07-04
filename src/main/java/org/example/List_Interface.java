@@ -1,8 +1,6 @@
 package org.example;
 
 import java.util.*;
-import java.util.function.DoubleToIntFunction;
-//import java.util.LinkedList;
 
 
 public class List_Interface {
@@ -15,12 +13,15 @@ public class List_Interface {
         System.out.println("String List Size: " + stringList.size());
 
         //Integer List
-        LinkedList<Integer> intList1 = new LinkedList<>(Arrays.asList(90,2,14,5,4));
+        ArrayList<Integer> intList1 = new ArrayList<>(Arrays.asList(90,2,14,5,4));
         System.out.println(intList1);
 
         //reverse list
         Collections.reverse(intList1);
         intList1.remove(2);
+
+        //Replace any element
+        intList1.set(1,89);
 
         /* Remove Specific Element
          intList1.remove(new Integer(2));   */
@@ -66,9 +67,12 @@ public class List_Interface {
 
 
         /*
-        Contains method
+        Contains() method
+        removeIf() method
          */
-        System.out.println(intList1.contains(2));
+        System.out.println("List contains 2 : " + intList1.contains(2));
 
+        intList1.removeIf(element -> element == 2);
+        System.out.println(intList1);
     }
 }
